@@ -1,0 +1,31 @@
+.container-fluid{
+       
+        padding: 49px;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        border-radius: 10px;
+        text-align: center;
+        width: 500px;
+}
+.information{
+        padding: 52.7px;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        border-radius: 10px;
+        text-align: left;
+        width: 500px;
+        background-color: black;
+        color: cyan;
+}
+#input{
+    width: 400px;
+}
+
+#btn-Sign-in{
+    width: 400px;
+}
+body{
+    background-color: darkblue;
+}
