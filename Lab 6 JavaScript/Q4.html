@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Number</title>
+    <style>
+        td{
+            text-align: center;
+        }
+        fieldset{
+            width: fit-content;
+            
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="background-color:lightgrey;">
+    <h2>Input Section</h2>
+    <div class="sort">
+    <table>
+        <tr>
+            <td>
+                <h2>A</h2>
+            <input type="number" id="a">
+            </td>
+            <td>
+                <h2>B</h2>
+            <input type="number" id="b">
+            </td>
+            <td>
+                <h2>C</h2>
+            <input type="number" id="c">
+            </td>
+        </tr>
+    </table><br>
+    <button onclick="ascending()">Sort in Ascending Order</button>
+    <button onclick="descending()">Sort in Descending Order</button><br><br>
+    <hr>
+    <h2>Output Section</h2>
+    <table>
+        <tr>
+            <td>
+                <input type="number" id="ans a" disabled>
+            </td>
+            <td>
+                <input type="number" id="ans b" disabled>
+            </td>
+            <td><input type="number" id="ans c" disabled></td>
+        </tr>
+    </table>
+
+    
+
+
+</div>
+
+    </fieldset>
+    <script>
+            
+        function ascending(){
+            myitem = [
+            Number(document.getElementById("a").value),
+            Number(document.getElementById("b").value),
+            Number(document.getElementById("c").value),
+
+        ];
+            myitem.sort();
+            document.getElementById("ans a").value = myitem[0];
+            document.getElementById("ans b").value = myitem[1];
+            document.getElementById("ans c").value = myitem[2];
+        }
+        function descending(){
+            myitem = [
+            document.getElementById("a").value,
+            document.getElementById("b").value,
+            document.getElementById("c").value
+
+        ];
+            myitem.sort();
+            document.getElementById("ans a").value = myitem[2];
+            document.getElementById("ans b").value = myitem[1];
+            document.getElementById("ans c").value = myitem[0];
+        }
+        
+
+        
+    </script>
+
+    
+    
+</body>
+</html>

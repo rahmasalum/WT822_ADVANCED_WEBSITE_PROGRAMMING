@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Send Message</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .container {
+      background:lightgrey;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+    .error {
+      border-color: red;
+    }
+    .error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: black;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Send Message</h2>
+    <form id="messageForm">
+      <div id="errorBox"></div>
+      <label>Name:</label>
+      <input type="text" id="name" name="name" />
+      <label>Email:</label>
+      <input type="email" id="email" name="email" />
+      <label>Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('messageForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const errorBox = document.getElementById('errorBox');
+
+    function submitter(e) {
+      e.preventDefault();
+
+      
+      errorBox.innerHTML = "";
+      nameInput.classList.remove("error");
+      emailInput.classList.remove("error");
+      messageInput.classList.remove("error");
+
+      let hasError = false;
+      let errorMessages = "";
+
+      if (nameInput.value.trim() === "") {
+        hasError = true;
+        errorMessages += "<p>Please enter your name.</p>";
+        nameInput.classList.add("error");
+      }
+
+      if (emailInput.value.trim() === "") {
+        hasError = true;
+        errorMessages += "<p>Please enter your email.</p>";
+        emailInput.classList.add("error");
+      }
+
+      if (messageInput.value.trim() === "") {
+        hasError = true;
+        errorMessages += "<p>Please enter your message.</p>";
+        messageInput.classList.add("error");
+      }
+
+      if (hasError) {
+        errorBox.innerHTML = `<div class="error-message">${errorMessages}</div>`;
+        setTimeout(() => {
+          errorBox.innerHTML = "";
+          nameInput.classList.remove("error");
+          emailInput.classList.remove("error");
+          messageInput.classList.remove("error");
+        }, 4000);
+        return;
+      }
+
+      
+      const formData = {
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value
+      };
+
+      console.log("Form Data:", formData);
+      alert("Message ready to be sent!");
+      
+    }
+
+    form.addEventListener('submit', submitter);
+  </script>
+</body>
+</html>

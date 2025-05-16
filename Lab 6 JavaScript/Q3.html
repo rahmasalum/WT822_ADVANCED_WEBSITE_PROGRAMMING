@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+</head>
+<body>
+    <script>
+        function Circle(radius){
+        this.radius = radius;
+        this.getArea=function(){
+        area = Math.PI*radius**2;
+        console.log(area);
+        return area;
+        }
+        this.getPerimeter=function(){
+        per = 2*Math.PI*radius;
+        console.log(per);
+        return per;
+        }
+     }
+     let c1 = new Circle(11);
+     c1.getArea();
+     let c2 = new Circle(4.44);
+     c2.getPerimeter();
+     /* kudisplay katika browser kawaida*/
+     document.write(c1.getArea()+"<br>");
+     document.write(c2.getPerimeter());
+    </script>
+</body>
+</html>
+    
