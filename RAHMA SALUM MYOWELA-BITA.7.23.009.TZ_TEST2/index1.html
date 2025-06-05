@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTaskBoard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/dataTables.dataTables.min.css">
+
+
+</head>
+<body>
+    <h2>Smart Task Board</h2>
+    <div class="container">
+        <input type="text" id="description" placeholder="Enter Task">
+        <select>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+        <button onclick="add()" class="btn btn-primary" mb-3 style="background-color: mediumblue;color: white;">Add Task</button>
+    </div>
+    <div class="taskSummary">
+        <h2>Task Summary</h2>
+        <section>Total Tasks:
+            <input type="number" id="total" value="0">
+        </section><br>
+        <section>completed Tasks:
+            <input type="number" id="completed" value="0">
+        </section><br>
+        <section>Remaining Tasks:
+            <input type="number" id="remaining" value="0">
+        </section>
+    </div>
+    <h2>Reviw Project Proposal</h2>
+    <p>Priority: High</p>
+    <button btn btn="success" style="background-color: green;color: white;">Mark as Done</button>
+    <button btn btn="danger" style="">Delete</button>
+    <h2>Send weekly report to supervisor</h2>
+    <p>Priority: Medium</p>
+    
+    <script>
+        function add(){
+            alert("Task description cannot be empty")
+        }
+
+    </script>
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
